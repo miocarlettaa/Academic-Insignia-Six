@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Insignia Six — Knowledge Hidden in Plain Sight</title>
+  <meta name="description" content="Sistem Kecerdasan Kesadaran dengan enam perspektif untuk mengenali pola berpikir, mengeksplorasi kemampuan, dan mengembangkan potensi pelajar SD–SMA hingga mahasiswa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #070b14;
+      --bg-secondary: #0d1424;
+      --bg-card: rgba(17, 25, 43, 0.78);
+      --border-subtle: rgba(148, 163, 184, 0.16);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-gold: #e2b857;
+      --accent-blue: #38bdf8;
+      --accent-indigo: #3b82f6;
+      --accent-emerald: #10b981;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-glow: 0 20px 50px rgba(2, 8, 23, 0.65);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.10), transparent 38%),
+        radial-gradient(circle at 85% 25%, rgba(226, 184, 87, 0.08), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.07), transparent 45%);
+    }
+
+    .font-insignia {
+      font-family: 'Cinzel', Georgia, serif;
+      letter-spacing: 0.08em;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 11, 20, 0.82);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-emblem {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px solid rgba(226, 184, 87, 0.45);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: var(--accent-gold);
+      font-size: 1.05rem;
+      box-shadow: 0 0 20px rgba(226, 184, 87, 0.18);
+    }
+
+    .brand-text span {
+      display: block;
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text small {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav.nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav.nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.94rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e2b857, #c9972c);
+      color: #090d16;
+      box-shadow: 0 10px 25px rgba(226, 184, 87, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(226, 184, 87, 0.38);
+    }
+
+    .btn-secondary {
+      background: rgba(30, 41, 59, 0.65);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(51, 65, 85, 0.75);
+      border-color: rgba(226, 184, 87, 0.4);
+    }
+
+    .btn-sm {
+      padding: 9px 18px;
+      font-size: 0.86rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 88px 0 68px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(226, 184, 87, 0.12);
+      border: 1px solid rgba(226, 184, 87, 0.32);
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.35rem, 4.4vw, 3.65rem);
+      line-height: 1.14;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(120deg, #f8fafc 15%, #e2b857 55%, #38bdf8 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-motto {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero p.lead {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 590px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-quotes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .quote-mini {
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 3px solid var(--accent-gold);
+      padding: 12px 14px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      font-style: italic;
+    }
+
+    /* Hero Insignia Card */
+    .insignia-showcase {
+      background: linear-gradient(160deg, rgba(17, 25, 43, 0.92), rgba(9, 14, 26, 0.96));
+      border: 1px solid rgba(226, 184, 87, 0.28);
+      border-radius: 26px;
+      padding: 32px;
+      box-shadow: var(--shadow-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .insignia-showcase::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 90deg, transparent, rgba(226, 184, 87, 0.08), rgba(56, 189, 248, 0.08), transparent);
+      animation: rotateSlow 22s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes rotateSlow {
+      to { transform: rotate(360deg); }
+    }
+
+    .vi-crest {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 24px 16px;
+      border-radius: 18px;
+      background: rgba(7, 11, 20, 0.72);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 22px;
+    }
+
+    .vi-roman {
+      font-size: 4.2rem;
+      line-height: 1;
+      color: var(--accent-gold);
+      text-shadow: 0 0 32px rgba(226, 184, 87, 0.35);
+    }
+
+    .vi-subtitle {
+      font-size: 0.78rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .hex-pills {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .hex-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(13, 20, 36, 0.75);
+      padding: 22px 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    .trust-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Sections */
+    section.block {
+      padding: 84px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 52px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-blue);
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.015em;
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    /* 3 Pillars of Conscious Intelligence */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(226, 184, 87, 0.35);
+    }
+
+    .card-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    /* Interactive 6 Perspectives Explorer */
+    .perspectives-wrapper {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 26px;
+      padding: 36px;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .tabs-bar {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .tab-btn {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 14px 10px;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.22s ease;
+      font-family: inherit;
+    }
+
+    .tab-btn .code {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      opacity: 0.8;
+      margin-bottom: 4px;
+    }
+
+    .tab-btn .name {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      border-color: var(--active-color, var(--accent-gold));
+      background: rgba(30, 41, 59, 0.95);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .perspective-detail {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: center;
+      background: rgba(7, 11, 20, 0.65);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .identity-badge-card {
+      border-radius: 18px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: all 0.3s ease;
+    }
+
+    .identity-badge-card .vi-mark {
+      font-size: 3.1rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .identity-badge-card .style-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .focus-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .focus-list li {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .focus-list li::before {
+      content: "✦";
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+    }
+
+    /* 5-Step Journey */
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 22px 18px;
+      position: relative;
+    }
+
+    .step-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-blue);
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+    }
+
+    .step-card h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    /* Interactive MVP Mini-Assessment */
+    .quiz-box {
+      background: linear-gradient(145deg, rgba(17, 25, 43, 0.95), rgba(10, 15, 28, 0.98));
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 24px;
+      padding: 36px;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(148, 163, 184, 0.16);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 16.6%;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold));
+      transition: width 0.3s ease;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .quiz-option {
+      width: 100%;
+      text-align: left;
+      padding: 15px 18px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--accent-gold);
+      background: rgba(30, 41, 59, 0.95);
+    }
+
+    .disclaimer-note {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Segments & Comparison */
+    .segment-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .seg-btn {
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .seg-btn.active {
+      background: var(--accent-gold);
+      color: #090d16;
+      border-color: var(--accent-gold);
+    }
+
+    .seg-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 820px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    /* CTA Section */
+    .cta-box {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.42), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(226, 184, 87, 0.35);
+      border-radius: 28px;
+      padding: 48px 36px;
+      text-align: center;
+    }
+
+    .cta-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 640px;
+      margin: 26px auto 14px;
+    }
+
+    .cta-form input, .cta-form select {
+      flex: 1 1 200px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(7, 11, 20, 0.85);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.94rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid, .perspective-detail {
+        grid-template-columns: 1fr;
+      }
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .tabs-bar {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .journey-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      nav.nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-quotes, .hex-pills, .focus-list, .journey-grid {
+        grid-template-columns: 1fr;
+      }
+      .tabs-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <div class="brand-emblem font-insignia">VI</div>
+        <div class="brand-text">
+          <span>Academic Insignia Six</span>
+          <small>Conscious Intelligence System</small>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#filosofi">Filosofi</a>
+        <a href="#perspektif">Enam Perspektif</a>
+        <a href="#solusi">Know Your Potential</a>
+        <a href="#simulasi">Mini Assessment</a>
+        <a href="#segmen">Jenjang & Dampak</a>
+      </nav>
+      <a href="#gabung" class="btn btn-primary btn-sm">Akses MVP</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">EdTech Innovation · SDG 4 Quality Education</div>
+        <p class="hero-motto">KNOWLEDGE HIDDEN IN PLAIN SIGHT.</p>
+        <h1>Discover Your Potential. <span class="highlight">Kenali Cara Berpikirmu.</span></h1>
+        <p class="lead">
+          Lebih dari sekadar nilai ujian atau tes kepribadian instan. <strong>Academic Insignia Six</strong> menghadirkan <em>Sistem Kecerdasan Kesadaran</em>—ruang eksplorasi interaktif yang membantu pelajar SD–SMA dan mahasiswa memetakan pola pikir melalui enam perspektif kecerdasan.
+        </p>
+        <div class="hero-actions">
+          <a href="#simulasi" class="btn btn-primary">Coba 6 Pertanyaan Eksplorasi</a>
+          <a href="#perspektif" class="btn btn-secondary">Jelajahi Enam Perspektif VI</a>
+        </div>
+        <div class="hero-quotes">
+          <div class="quote-mini">“Pola bukan untuk diikuti, tapi untuk dibaca.”</div>
+          <div class="quote-mini">“Kesadaran bukan hanya berpikir, tapi mengetahui bagaimana berpikir.”</div>
+        </div>
+      </div>
+
+      <!-- Visual Crest Card -->
+      <div class="insignia-showcase">
+        <div class="vi-crest">
+          <div class="vi-roman font-insignia">VI</div>
+          <div class="vi-subtitle">Six Perspectives · One Consciousness</div>
+        </div>
+        <div class="hex-pills">
+          <div class="hex-pill"><span class="dot" style="background:#f8fafc;"></span><strong>I.S-01 Mio</strong> · Pola & Solusi</div>
+          <div class="hex-pill"><span class="dot" style="background:#3b82f6;"></span><strong>I.S-02 Pena</strong> · Strategi & Struktur</div>
+          <div class="hex-pill"><span class="dot" style="background:#38bdf8;"></span><strong>I.S-03 Vania</strong> · Persepsi & Situasi</div>
+          <div class="hex-pill"><span class="dot" style="background:#94a3b8;"></span><strong>I.S-04 Mizu</strong> · Fisik & Refleks</div>
+          <div class="hex-pill"><span class="dot" style="background:#10b981;"></span><strong>I.S-05 Pulu</strong> · IQ & Kognitif</div>
+          <div class="hex-pill"><span class="dot" style="background:#475569; border:1px solid #cbd5e1;"></span><strong>I.S-06 Al</strong> · Psikologi & Mind</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & Positioning Strip -->
+  <div class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <strong>6 Perspektif Terintegrasi</strong>
+        <span>Melampaui pengotakan IQ/EQ konvensional</span>
+      </div>
+      <div class="trust-item">
+        <strong>SD · SMP · SMA · Mahasiswa</strong>
+        <span>Dirancang untuk eksplorasi bertahap</span>
+      </div>
+      <div class="trust-item">
+        <strong>Garuda Spark NextPreneur</strong>
+        <span>Inovasi Bisnis Pendidikan Sumut 2026</span>
+      </div>
+      <div class="trust-item">
+        <strong>SDG 4: Quality Education</strong>
+        <span>Mendukung pembelajaran sepanjang hayat</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filosofi & Landasan Pemikiran -->
+  <section id="filosofi" class="block">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Landasan Pemikiran</span>
+        <h2>Sistem Kecerdasan Kesadaran</h2>
+        <p>
+          Banyak pelajar dinilai hanya dari hasil akhir yang terlihat, tanpa pernah diajak memahami bagaimana cara mereka belajar dan mengambil keputusan. Kami menempatkan enam fungsi kecerdasan dalam satu kesadaran yang saling melengkapi.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="card">
+          <span class="card-num">01 · MEMAHAMI</span>
+          <h3>Membaca Pola Diri</h3>
+          <p>Mengenali karakteristik alami, kecenderungan cara belajar, dan potensi tersembunyi yang selama ini belum pernah dieksplorasi secara sadar.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">02 · MENGATUR</span>
+          <h3>Mengelola Proses Berpikir</h3>
+          <p>Memahami bagaimana logika, strategi, persepsi, emosi, dan ketahanan fisik bekerja bersama saat menghadapi tantangan akademik maupun kehidupan.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">03 · MELAMPAUI REALITA</span>
+          <h3>Menciptakan Pendekatan Baru</h3>
+          <p>Mengembangkan keberanian untuk mempertanyakan batasan lama (<em>Unlearning 101</em>) dan menemukan solusi kreatif yang relevan dengan masa depan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 6 Perspectives -->
+  <section id="perspektif" class="block">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Enam Identitas · Satu Kesatuan</span>
+        <h2>Eksplorasi Enam Perspektif Kecerdasan</h2>
+        <p>
+          Bukan enam pribadi yang terpisah dan tidak ada satu pun yang mutlak lebih tinggi. Klik setiap kode insignia untuk melihat fungsi dan fokus pengembangan masing-masing perspektif.
+        </p>
+      </div>
+
+      <div class="perspectives-wrapper">
+        <div class="tabs-bar" id="perspectiveTabs"></div>
+        <div class="perspective-detail" id="perspectiveDetail"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-Step Product Solution Flow -->
+  <section id="solusi" class="block">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Konsep Solusi · Know Your Potential</span>
+        <h2>Pengalaman Belajar Partisipatif, Bukan Sekadar Pelabelan</h2>
+        <p>
+          Academic Insignia Six mengubah filosofi menjadi alur website interaktif yang membantu pengguna berefleksi dan bertumbuh.
+        </p>
+      </div>
+
+      <div class="journey-grid">
+        <div class="step-card">
+          <div class="step-badge">01</div>
+          <h4>Self-Exploration</h4>
+          <p>Mengenali diri melalui 6 pertanyaan pemantik awal yang menggali kebiasaan dan cara pandang.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">02</div>
+          <h4>Cognitive Exploration</h4>
+          <p>Menjelajahi aktivitas interaktif dan mini-games berbasis penalaran, logika, dan pemecahan masalah.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">03</div>
+          <h4>Six Perspectives</h4>
+          <p>Menghubungkan pengalaman belajar ke dalam enam sudut pandang kecerdasan secara utuh.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">04</div>
+          <h4>Reflection</h4>
+          <p>Ruang refleksi dan <em>confidence essays</em> untuk memaknai jawaban tanpa kotak label yang membatasi.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">05</div>
+          <h4>Potential Development</h4>
+          <p>Rekomendasi aktivitas belajar personal untuk mengasah kekuatan dan mengeksplorasi area baru.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Mini Assessment (MVP Lead Magnet) -->
+  <section id="simulasi" class="block">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Preview MVP Interaktif</span>
+        <h2>Simulasi 6 Pertanyaan Eksplorasi Awal</h2>
+        <p>Rasakan pengalaman awal <strong>Academic Insignia Six</strong>. Pilih respons yang paling menggambarkan caramu menghadapi situasi sehari-hari.</p>
+      </div>
+
+      <div class="quiz-box" id="quizContainer">
+        <div class="progress-bar"><div class="progress-fill" id="quizProgress"></div></div>
+        <div id="quizStepLabel" style="font-size:0.82rem; color:var(--accent-gold); font-weight:700; margin-bottom:8px;">PERTANYAAN 1 DARI 6</div>
+        <h3 id="quizQuestion" style="font-size:1.3rem;"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="disclaimer-note">
+          <strong>Transparansi Ilmiah:</strong> Hasil eksplorasi ini merupakan rangkuman refleksi konseptual milik Academic Insignia Six untuk membantu pengenalan pola belajar, <em>bukan</em> diagnosis psikologis klinis maupun pengukuran skor IQ resmi.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Segments -->
+  <section id="segmen" class="block">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Untuk Setiap Tahap Pertumbuhan</span>
+        <h2>Dirancang untuk Pelajar hingga Mahasiswa</h2>
+        <p>Fokus kami bukan membandingkan kemampuan antarpengguna, melainkan memberi ruang eksplorasi sesuai fase perkembangan.</p>
+      </div>
+
+      <div class="segment-tabs" id="segmentTabs">
+        <button class="seg-btn active" data-seg="sd">Tingkat SD</button>
+        <button class="seg-btn" data-seg="smp">Tingkat SMP</button>
+        <button class="seg-btn" data-seg="sma">Tingkat SMA</button>
+        <button class="seg-btn" data-seg="mhs">Mahasiswa</button>
+      </div>
+
+      <div class="seg-panel" id="segmentPanel">
+        <h3 style="margin-bottom:10px; color:var(--accent-gold);">Tingkat Sekolah Dasar (SD)</h3>
+        <p style="color:var(--text-muted); max-width:620px; margin:0 auto;">
+          Eksplorasi kemampuan dasar dan aktivitas belajar interaktif yang menyenangkan agar anak mengenali rasa ingin tahunya sejak dini tanpa tekanan peringkat.
+        </p>
+      </div>
+
+      <!-- Final CTA -->
+      <div id="gabung" class="cta-box">
+        <span class="eyebrow">Bergabung dalam Ekosistem Pembelajaran</span>
+        <h2 style="font-size:clamp(1.75rem, 3vw, 2.4rem); margin-bottom:12px;">Siap Membaca Pola Potensimu Sendiri?</h2>
+        <p style="color:#cbd5e1; max-width:620px; margin:0 auto;">
+          Daftarkan dirimu atau institusi pendidikanmu untuk mendapatkan akses awal platform MVP <strong>Academic Insignia Six</strong> dan pembaruan pengembangan menuju PT Academic Insignia Six.
+        </p>
+        <form class="cta-form" id="leadForm">
+          <input type="text" id="leadName" placeholder="Nama lengkap / Nama sekolah" required />
+          <select id="leadRole" required>
+            <option value="">Pilih peranmu...</option>
+            <option value="Pelajar SD/SMP/SMA">Pelajar (SD / SMP / SMA)</option>
+            <option value="Mahasiswa">Mahasiswa</option>
+            <option value="Guru / Sekolah">Guru / Institusi Pendidikan</option>
+            <option value="Mitra / Kolaborator">Mitra / Kolaborator</option>
+          </select>
+          <input type="email" id="leadEmail" placeholder="Alamat email aktif" required />
+          <button type="submit" class="btn btn-primary">Gabung Early Access</button>
+        </form>
+        <p id="formFeedback" style="font-size:0.88rem; color:var(--accent-emerald); font-weight:600; min-height:22px;"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-flex">
+      <div>
+        <strong style="color:var(--text-main);">Academic Insignia Six</strong> · <em>Knowledge Hidden in Plain Sight.</em>
+        <div style="font-size:0.8rem; margin-top:4px;">Digagas oleh Mio & Tim Insignia Six · Mendukung SDG 4 Quality Education</div>
+      </div>
+      <div>
+        Instagram & Official Handle: <strong style="color:var(--accent-gold);">@insignia_six</strong>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Data 6 Perspektif Kecerdasan (Sesuai Dokumen Konsep Utama)
+    const perspectives = [
+      {
+        code: "I.S-01",
+        name: "Mio",
+        role: "Organizer · Pola & Problem Solving",
+        colorLabel: "White · Vintage",
+        accent: "#f8fafc",
+        badgeBg: "linear-gradient(135deg, #f8fafc, #cbd5e1)",
+        badgeText: "#0f172a",
+        desc: "Pusat pengorganisasian konsep yang menghubungkan berbagai fenomena menjadi pemahaman utuh—berperan sebagai organisator yang menjaga keterhubungan sistem, bukan pemimpin mutlak.",
+        focus: [
+          "Membaca pola tersembunyi",
+          "Mengidentifikasi akar masalah",
+          "Menghubungkan informasi lintas bidang",
+          "Menganalisis situasi & solusi"
+        ]
+      },
+      {
+        code: "I.S-02",
+        name: "Pena da Vinci",
+        role: "Strategi & Struktur",
+        colorLabel: "Dark Blue · Y2K",
+        accent: "#3b82f6",
+        badgeBg: "linear-gradient(135deg, #1e3a8a, #172554)",
+        badgeText: "#f8fafc",
+        desc: "Membangun kerangka berpikir sistematis dan perencanaan jangka panjang, termasuk gagasan Unlearning 101: keberanian mengevaluasi ulang asumsi lama saat menemukan informasi baru.",
+        focus: [
+          "Perencanaan & arsitektur strategi",
+          "Struktur pemikiran sistematis",
+          "Pengambilan keputusan terukur",
+          "Unlearning 101 (evaluasi asumsi lama)"
+        ]
+      },
+      {
+        code: "I.S-03",
+        name: "Vania / Vanilla Latte",
+        role: "Wakil · Persepsi & Dinamika Situasi",
+        colorLabel: "Sky Blue · Feminine",
+        accent: "#38bdf8",
+        badgeBg: "linear-gradient(135deg, #38bdf8, #0284c7)",
+        badgeText: "#090d16",
+        desc: "Memahami bagaimana realitas dipersepsikan, membaca sudut pandang orang lain, serta mengenali pengaruh informasi dan komunikasi secara etis untuk membangun kolaborasi sehat.",
+        focus: [
+          "Membaca dinamika situasi sosial",
+          "Memahami sudut pandang orang lain",
+          "Mengenali framing & pengaruh informasi",
+          "Komunikasi & empati persepsi etis"
+        ]
+      },
+      {
+        code: "I.S-04",
+        name: "Mizu",
+        role: "Perspektif Fisik · Fisik, Refleks & Kekuatan",
+        colorLabel: "Grey · Casual",
+        accent: "#94a3b8",
+        badgeBg: "linear-gradient(135deg, #64748b, #334155)",
+        badgeText: "#f8fafc",
+        desc: "Pengingat penting bahwa kecerdasan manusia tidak berhenti di kepala. Kesiapan tubuh, refleks, koordinasi motorik, dan ketahanan fisik adalah fondasi ekspresi potensi.",
+        focus: [
+          "Koordinasi tubuh & keterampilan motorik",
+          "Kecepatan refleks terhadap situasi",
+          "Respons adaptif terhadap lingkungan",
+          "Ketahanan & vitalitas fisik"
+        ]
+      },
+      {
+        code: "I.S-05",
+        name: "Pulu'tekstrovert",
+        role: "Sekretaris · IQ & Kognitif",
+        colorLabel: "Green · Chill",
+        accent: "#10b981",
+        badgeBg: "linear-gradient(135deg, #10b981, #065f46)",
+        badgeText: "#f8fafc",
+        desc: "Mengasah ketajaman penalaran logis, pemrosesan konsep abstrak, dan pemecahan persoalan kognitif dengan pendekatan belajar yang tenang, jernih, dan terstruktur.",
+        focus: [
+          "Logika & penalaran analitis",
+          "Pemrosesan informasi secara efisien",
+          "Pemahaman konsep mendalam",
+          "Pemecahan persoalan kognitif"
+        ]
+      },
+      {
+        code: "I.S-06",
+        name: "Al",
+        role: "Perspektif Psikologis · Psychological Mind",
+        colorLabel: "Black · Monochrome",
+        accent: "#e2e8f0",
+        badgeBg: "linear-gradient(135deg, #1e293b, #020617)",
+        badgeText: "#f8fafc",
+        desc: "Menyelami lapisan terdalam motivasi manusia, pola perilaku, regulasi respons emosional, dan proses mental di balik setiap keputusan yang diambil individu.",
+        focus: [
+          "Pemetaan pola perilaku & kebiasaan",
+          "Kesadaran motivasi intrinsik",
+          "Pengelolaan respons emosional",
+          "Refleksi proses mental mendalam"
+        ]
+      }
+    ];
+
+    const tabsBar = document.getElementById("perspectiveTabs");
+    const detailContainer = document.getElementById("perspectiveDetail");
+
+    function renderPerspective(index) {
+      const p = perspectives[index];
+      document.querySelectorAll(".tab-btn").forEach((btn, idx) => {
+        btn.classList.toggle("active", idx === index);
+      });
+
+      detailContainer.innerHTML = `
+        <div class="identity-badge-card" style="background:${p.badgeBg}; color:${p.badgeText};">
+          <div class="style-tag">${p.colorLabel}</div>
+          <div class="vi-mark font-insignia">VI</div>
+          <div style="font-size:0.85rem; font-weight:700; opacity:0.85;">${p.code}</div>
+          <h3 style="font-size:1.55rem; margin-top:4px;">${p.name}</h3>
+        </div>
+        <div>
+          <span style="font-size:0.8rem; font-weight:700; color:${p.accent}; text-transform:uppercase; letter-spacing:0.08em;">${p.role}</span>
+          <h3 style="font-size:1.5rem; margin:6px 0 12px;">Perspektif ${p.name}</h3>
+          <p style="color:var(--text-muted); font-size:0.96rem;">${p.desc}</p>
+          <ul class="focus-list">
+            ${p.focus.map(item => `<li>${item}</li>`).join("")}
+          </ul>
+        </div>
+      `;
+    }
+
+    perspectives.forEach((p, idx) => {
+      const btn = document.createElement("button");
+      btn.className = "tab-btn" + (idx === 0 ? " active" : "");
+      btn.style.setProperty("--active-color", p.accent);
+      btn.innerHTML = `<span class="code">${p.code}</span><span class="name">${p.name.split(" ")[0]}</span>`;
+      btn.addEventListener("click", () => renderPerspective(idx));
+      tabsBar.appendChild(btn);
+    });
+    renderPerspective(0);
+
+    // Interactive 6-Question Mini Assessment
+    const questions = [
+      {
+        q: "1. Saat menghadapi masalah baru yang belum pernah kamu temui, langkah pertamamu adalah...",
+        options: [
+          { text: "Mencari pola dan menghubungkan petunjuk yang terlihat terpisah", idx: 0 },
+          { text: "Menyusun peta strategi dan membagi masalah jadi struktur kecil", idx: 1 },
+          { text: "Mengamati situasi sekitar dan bagaimana orang lain merespons", idx: 2 }
+        ]
+      },
+      {
+        q: "2. Dalam aktivitas belajar atau latihan, energi terbaikmu muncul ketika...",
+        options: [
+          { text: "Melakukan praktik langsung, bergerak, dan melatih ketangkasan", idx: 3 },
+          { text: "Membedah konsep logika, teka-teki, atau penalaran mendalam", idx: 4 },
+          { text: "Merefleksikan alasan di balik perilaku dan motivasi dirimu sendiri", idx: 5 }
+        ]
+      },
+      {
+        q: "3. Ketika pendapatmu ternyata keliru karena ada informasi baru, reaksimu biasanya...",
+        options: [
+          { text: "Mengevaluasi ulang kerangka berpikir lama dan menyusun strategi baru", idx: 1 },
+          { text: "Meninjau bagaimana informasi itu memengaruhi sudut pandang tim", idx: 2 },
+          { text: "Menganalisis pola kesalahan agar tidak terulang di kasus berikutnya", idx: 0 }
+        ]
+      },
+      {
+        q: "4. Di dalam kelompok belajar atau proyek, peran alami yang sering kamu ambil adalah...",
+        options: [
+          { text: "Menjaga ketenangan analisis dan ketepatan konsep logika", idx: 4 },
+          { text: "Memahami dinamika psikologis dan menjaga semangat anggota", idx: 5 },
+          { text: "Menjadi penggerak eksekusi lapangan yang sigap dan responsif", idx: 3 }
+        ]
+      },
+      {
+        q: "5. Bagimu, tanda bahwa seseorang benar-benar memahami sesuatu adalah ketika ia mampu...",
+        options: [
+          { text: "Melihat hubungan antar-fenomena yang tidak disadari orang lain", idx: 0 },
+          { text: "Menjelaskan struktur sebab-akibatnya secara runtut", idx: 4 },
+          { text: "Memahami dampak emosional dan perilaku dari hal tersebut", idx: 5 }
+        ]
+      },
+      {
+        q: "6. Aktivitas eksplorasi mana yang paling ingin kamu coba minggu ini?",
+        options: [
+          { text: "Simulasi strategi & pengambilan keputusan dalam skenario kompleks", idx: 1 },
+          { text: "Studi kasus membaca persepsi dan komunikasi dalam situasi nyata", idx: 2 },
+          { text: "Tantangan ketangkasan fisik, refleks, dan fokus tubuh", idx: 3 }
+        ]
+      }
+    ];
+
+    let currentStep = 0;
+    const scores = [0, 0, 0, 0, 0, 0];
+
+    function renderQuiz() {
+      const container = document.getElementById("quizContainer");
+      if (currentStep >= questions.length) {
+        const maxScore = Math.max(...scores);
+        const topIdx = scores.indexOf(maxScore);
+        const topP = perspectives[topIdx];
+
+        container.innerHTML = `
+          <div style="text-align:center; padding:12px 0;">
+            <span class="eyebrow">Hasil Refleksi Awal · Bukan Label Mutlak</span>
+            <h3 style="font-size:1.75rem; margin-bottom:10px;">Perspektif yang Paling Menonjol Saat Ini: <span style="color:${topP.accent};">${topP.name} (${topP.code})</span></h3>
+            <p style="color:var(--text-muted); max-width:620px; margin:0 auto 22px;">
+              Kamu menunjukkan kecenderungan kuat pada <strong>${topP.role}</strong>. Ingat prinsip utama Academic Insignia Six: kelima perspektif lainnya tetap ada dalam kesadaranmu dan dapat terus dikembangkan.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
+              <button class="btn btn-secondary" onclick="resetQuiz()">Ulangi Eksplorasi</button>
+              <a href="#gabung" class="btn btn-primary">Simpan & Lanjut ke 30 Mini-Games MVP</a>
+            </div>
+            <div class="disclaimer-note" style="text-align:left;">
+              <strong>Catatan:</strong> Ringkasan ini disusun untuk refleksi pengembangan potensi belajar, bukan alat diagnosis psikologis maupun skor IQ resmi.
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      const item = questions[currentStep];
+      document.getElementById("quizProgress").style.width = `${((currentStep + 1) / questions.length) * 100}%`;
+      document.getElementById("quizStepLabel").textContent = `PERTANYAAN ${currentStep + 1} DARI ${questions.length}`;
+      document.getElementById("quizQuestion").textContent = item.q;
+
+      const optionsEl = document.getElementById("quizOptions");
+      optionsEl.innerHTML = "";
+      item.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-option";
+        btn.textContent = opt.text;
+        btn.onclick = () => {
+          scores[opt.idx]++;
+          currentStep++;
+          renderQuiz();
+        };
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function resetQuiz() {
+      currentStep = 0;
+      scores.fill(0);
+      const container = document.getElementById("quizContainer");
+      container.innerHTML = `
+        <div class="progress-bar"><div class="progress-fill" id="quizProgress"></div></div>
+        <div id="quizStepLabel" style="font-size:0.82rem; color:var(--accent-gold); font-weight:700; margin-bottom:8px;"></div>
+        <h3 id="quizQuestion" style="font-size:1.3rem;"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="disclaimer-note">
+          <strong>Transparansi Ilmiah:</strong> Hasil eksplorasi ini merupakan rangkuman refleksi konseptual milik Academic Insignia Six untuk membantu pengenalan pola belajar, <em>bukan</em> diagnosis psikologis klinis maupun pengukuran skor IQ resmi.
+        </div>
+      `;
+      renderQuiz();
+    }
+
+    renderQuiz();
+
+    // Segment Switcher
+    const segmentData = {
+      sd: {
+        title: "Tingkat Sekolah Dasar (SD)",
+        desc: "Eksplorasi kemampuan dasar dan aktivitas belajar interaktif yang menyenangkan agar anak mengenali rasa ingin tahunya sejak dini tanpa tekanan peringkat."
+      },
+      smp: {
+        title: "Tingkat Sekolah Menengah Pertama (SMP)",
+        desc: "Membantu siswa mengenali ketertarikan alami, gaya belajar dominan, dan keberanian mencoba bidang baru sebelum menentukan minat lebih lanjut."
+      },
+      sma: {
+        title: "Tingkat Sekolah Menengah Atas (SMA)",
+        desc: "Memetakan cara berpikir, kekuatan pemecahan masalah, serta arah pengembangan diri untuk kesiapan studi lanjut dan pengambilan keputusan."
+      },
+      mhs: {
+        title: "Mahasiswa Perguruan Tinggi",
+        desc: "Mengenali pola berpikir strategis, keterampilan lintas perspektif, refleksi kepercayaan diri, dan kolaborasi tim untuk dunia akademik maupun karier."
+      }
+    };
+
+    document.querySelectorAll(".seg-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".seg-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const data = segmentData[btn.dataset.seg];
+        document.getElementById("segmentPanel").innerHTML = `
+          <h3 style="margin-bottom:10px; color:var(--accent-gold);">${data.title}</h3>
+          <p style="color:var(--text-muted); max-width:620px; margin:0 auto;">${data.desc}</p>
+        `;
+      });
+    });
+
+    // Lead Form Handler
+    document.getElementById("leadForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("leadName").value.trim();
+      const role = document.getElementById("leadRole").value;
+      const feedback = document.getElementById("formFeedback");
+      feedback.textContent = `Terima kasih, ${name} (${role})! Permintaan akses awal MVP Academic Insignia Six telah tercatat.`;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
